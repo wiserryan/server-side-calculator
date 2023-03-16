@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 // Look here for files
-app.use(express.static('server'));
+app.use(express.static('server/public'));
 
 // Listen for requests for files
 app.listen(port, () => {
