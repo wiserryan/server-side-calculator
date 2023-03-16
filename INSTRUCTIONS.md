@@ -24,6 +24,24 @@ Keep a historical record of all math operations and solutions on the server. Dis
 
 > Note: Do not use eval() to complete this assignment.
 
+// check list
+// 1. get folders correctly in order
+// 2. install correct dependencies
+// 3. npm init --yes
+// 4. npm install express
+// 5. type node server/server.js in terminal
+// 6. npm start - server is listening
+// 7. 
+// 8. 
+// 9. 
+// 10. 
+// 11. 
+// 12. 
+
+
+
+
+
 ## Stretch Goals
 
 - Convert the interface to look and behave like a calculator as shown below.
