@@ -6,6 +6,15 @@ const app = express();
 // Use 5001 for localhost development
 const port = process.env.PORT || 5001;
 
+// let quoteList
+
+// app.get('/...', (req, res) => {
+// console.log('GET Request made for /...)
+// res.send(quoteList)
+// });
+
+
+
 // Look here for files
 app.use(express.static('server/public'));
 
