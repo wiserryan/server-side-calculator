@@ -46,7 +46,8 @@ app.get('/calculations', (req, res) => {
 //   POST request save user input
  app.post('/calculation', (req, res) => {
    console.log('POST request made for /calculation');
-   let calculation = getResult(req.body)
+   let calculation = (req.body)
+   calculation.result = getResult(req.body);
    calculations.push(calculation)
    res.sendStatus(201); //Great success!
  });
@@ -55,27 +56,19 @@ function getResult(taco) {
   console.log(taco);
 //figure out how to get the actual result - put on line 63
 
+let result = 0;
+ if (taco.operator === '-') {
+    result = taco.number1 - taco.number2
+ }  else if (taco.operator === '+') {
+    result = taco.number1 + taco.number2
+ }  else if (taco.operator === '/') {
+    result = taco.number1 / taco.number2
+ }  else if (taco.operator === '*') {
+    result = taco.number1 * taco.number2
+ }
+    return result;
 
-  return {
-    number1: taco.number1,
-    number2: taco.number2,
-    operator: taco.operator,
-    result: 
-    //taco.getResult.value,
-    //taco.newCalculations,
-    //getResult.newCalculation,
-    //taco.getCalculation,
-    //taco.newCalculation,
-    //taco.resultDiv.innerHTML,
-    //taco.calculations,
-    //taco.getResult,
-    //taco.calculation
-    //taco.result,
-    //taco.compute(),
-    //resultDiv
-    //Number(document.querySelector("#resultDiv").value)
 
-  }
 }
 
 
