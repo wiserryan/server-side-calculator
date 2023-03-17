@@ -25,30 +25,46 @@ function getCalculations () {
 
  getCalculations();
 
+ let operator = ''
 
+ function minusButton(event) {
+    event.preventDefault()
+    operator = '-'
+ }
+ function addButton(event) {
+    event.preventDefault()
+    operator = '+'
+ }
+ function multiplyButton(event) {
+    event.preventDefault()
+    operator = '*'
+ }
+ function divideButton(event) {
+    event.preventDefault()
+    operator = '/'
+ }
 
+function submitButton (event) {
+    event.preventDefault()
 
-
-
-
-
-let operator
-const number1 = document.getElementById("#number1").value;
-const number2= document.getElementById("#number2").value;
+const number1 = Number(document.querySelector("#number1").value);
+const number2 = Number(document.querySelector("#number2").value);
 
 let newCalculation = {
     number1: number1,
     number2: number2,
     operator: operator,
-
 }
 
-     //type    url     data to send
+
+console.log(newCalculation);
+
 axios.post('/calculation', newCalculation).then((response) => {
        console.log(response);
-    
-
+    getCalculations()
 }).catch((error) => {
   console.log(error);
   alert('Something went wrong.'); 
     })
+}
+

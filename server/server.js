@@ -7,6 +7,13 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 app.use(express.json());
+// Look here for files
+app.use(express.static('server/public'));
+
+// Listen for requests for files
+app.listen(port, () => {
+    console.log(`listening on port: ${port}`);
+});
 
 let calculations = [
     { 
@@ -37,24 +44,26 @@ app.get('/calculations', (req, res) => {
 //   DELETE request to remove info
  
 //   POST request save user input
-//  app.post('/jokes', (req, res) => {
-//    console.log('POST request made for /jokes');
-//    any data we send from client/server is 
-//    available as a property of req.body
-//    console.log(req.body);
-//    let jokesForServer = req.body;
-//    jokes.push(jokesForServer);
-//    res.send(201); //Great success!
-//  });
+ app.post('/calculation', (req, res) => {
+   console.log('POST request made for /calculation');
+   let calculation = getResult(req.body)
+   calculations.push(calculation)
+   res.sendStatus(201); //Great success!
+ });
  
+function getResult(taco) {
+  console.log(taco);
+//figure out how to get the actual result - put on line 63
+
+
+  return {
+    number1: taco.number1,
+    number2: taco.number2,
+    operator: taco.operator,
+    result: 2000
+
+  }
+}
 
 
 
-
-// Look here for files
-app.use(express.static('server/public'));
-
-// Listen for requests for files
-app.listen(port, () => {
-    console.log(`listening on port: ${port}`);
-});
