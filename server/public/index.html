@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Side Calculator</title>
-    <header>Calculator</header>
+    <header>SERVER SIDE CALCULATOR</header>
+    <br>
     <!-- <button>onClick="emptyClick(event)" id="empty">Empty</button>
     <button onClick="minusClick(event)"> - </button>
     <button>Add</button>
@@ -14,18 +15,43 @@
 </head>
 <body>
     <input id="number1" />
-     - 
+    <!-- <button> onClick= "minusClick(event)" - </button>  -->
+    <button onClick="minusClick(event)"> - </button>
+    <button onClick="addButton(event)"> + </button>
+    <button onClick="divideButton(event)"> / </button>
+    <button onClick="multiplyButton(event)"> * </button>
     <input id="number2" />
-    <button id="equalButton"> = 
-    </button>
-    <input id="total" />
+    <button onClick="submitButton(event)"> = </button>
+    <button onClick="clearButton(event)"> CLEAR </button>
+    
+    <!-- <input id="total" /> -->
+    
     <!-- <button>onClick="emptyClick(event)" id="empty">Empty</button> -->
-    <!-- <button onClick="minusClick(event)"> - </button> -->
-    <!-- <button id="addButton"> + </button> -->
+    
     <!-- <button id="equalButton"> = </button> -->
     <!-- <div>Result <span id="resultTextArea"></span></div> -->
     <!-- <button>Subtract</button> -->
     <!-- <button>Equal</button> -->
+    <!-- <h1>Node Express Code Challenge</h1> -->
+    
+    <form onSubmit="submitForm(event)">
+    <!-- <input type='text' id='whoseJokeIn' placeholder='whose joke' />
+    <input type='text' id='questionIn' placeholder='question' />
+    <input type='text' id='punchLineIn' placeholder='punchLine' />
+    <input type="submit" /> -->
+    </form>
+    
+    <div id='resultDiv'>
+    </div>  
+    <div id='historyDiv'>
+    </div>
+
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts/client.js" charset="utf-8"></script>  
 </body>

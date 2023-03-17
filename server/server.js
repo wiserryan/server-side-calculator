@@ -6,12 +6,48 @@ const app = express();
 // Use 5001 for localhost development
 const port = process.env.PORT || 5001;
 
-// let quoteList
+app.use(express.json());
 
-// app.get('/...', (req, res) => {
-// console.log('GET Request made for /...)
-// res.send(quoteList)
-// });
+let calculations = [
+    { 
+      number1: 2, 
+      number2: 4,
+      operator: '+',
+      result: 6,  
+    },
+    { 
+        number1: 3, 
+        number2: 7,
+        operator: '*',
+        result: 21,  
+      }
+];
+
+
+//  GET request returns info
+//  function takes on two things, first parameter is what to match 
+ 
+app.get('/calculations', (req, res) => {
+    console.log('GET request made for /calculations');
+   res.send(calculations);
+   });
+ 
+ 
+//   PUT request update info
+//   DELETE request to remove info
+ 
+//   POST request save user input
+//  app.post('/jokes', (req, res) => {
+//    console.log('POST request made for /jokes');
+//    any data we send from client/server is 
+//    available as a property of req.body
+//    console.log(req.body);
+//    let jokesForServer = req.body;
+//    jokes.push(jokesForServer);
+//    res.send(201); //Great success!
+//  });
+ 
+
 
 
 
