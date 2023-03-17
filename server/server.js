@@ -60,7 +60,20 @@ function getResult(taco) {
     number1: taco.number1,
     number2: taco.number2,
     operator: taco.operator,
-    result: 2000
+    result: 
+    //taco.getResult.value,
+    //taco.newCalculations,
+    //getResult.newCalculation,
+    //taco.getCalculation,
+    //taco.newCalculation,
+    //taco.resultDiv.innerHTML,
+    //taco.calculations,
+    //taco.getResult,
+    //taco.calculation
+    //taco.result,
+    //taco.compute(),
+    //resultDiv
+    //Number(document.querySelector("#resultDiv").value)
 
   }
 }
